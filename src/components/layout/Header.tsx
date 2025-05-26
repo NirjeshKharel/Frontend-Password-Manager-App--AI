@@ -27,21 +27,21 @@ const Header: React.FC<HeaderProps> = ({
             <div className="bg-blue-600 p-1.5 rounded-md text-white">
               <Lock size={20} />
             </div>
-            <span className="ml-2 text-xl font-semibold text-gray-900 dark:text-white">SecureVault</span>
+            <span className="ml-2 text-lg md:text-xl font-semibold text-gray-900 dark:text-white">SecureVault</span>
           </div>
           
           {/* Search bar (centered) */}
           <div className="flex-1 max-w-md mx-4">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search size={16} className="text-gray-400" />
+                <Search size={16} className="text-gray-400 hidden md:block" />
               </div>
               <Input
                 type="text"
                 placeholder="Search passwords..."
                 value={searchTerm}
                 onChange={(e) => onSearchChange(e.target.value)}
-                className="pl-10"
+                className="pl-10 hidden md:block"
                 fullWidth
               />
             </div>
@@ -57,15 +57,15 @@ const Header: React.FC<HeaderProps> = ({
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
-            
+          
             <Button
               variant="primary"
               onClick={onAddNew}
-              className="flex items-center"
+              className="flex items-center "
               aria-label="Add new password"
             >
-              <Plus size={16} className="mr-1" />
-              Add Password
+              <Plus size={16} className="mr-1  " />
+             
             </Button>
           </div>
         </div>
